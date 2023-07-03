@@ -1,30 +1,34 @@
 <template>
   <div class="header-wrapper">
     <button class="navigation-menu-button">
-      <v-icon name="burger" />
+      <VIcon name="burger" />
     </button>
-    <v-container class="header-container">
+
+    <VContainer class="header-container">
       <nav class="navigation">
         <ul class="navigation-list">
           <li class="navigation-list__item">
-            <v-link url="/" :text="'Холодные закуски'" />
+            <VLink url="/" :text="'Холодные закуски'" />
           </li>
+
           <li class="navigation-list__item">
-            <v-link url="/" :text="'Горячие закуски'" />
+            <VLink url="/" :text="'Горячие закуски'" />
           </li>
+
           <li class="navigation-list__item">
-            <v-link url="/" :text="'Мясные блюда'" />
+            <VLink url="/" :text="'Мясные блюда'" />
           </li>
         </ul>
       </nav>
-      <v-link url="/cart" class="cart-button">
-        Корзина <v-icon v-if="!cartItemsCount && isReady" name="cart" /><span
+
+      <VLink url="/cart" class="cart-button">
+        Корзина <VIcon v-if="!cartItemsCount && isReady" name="cart" /><span
           v-if="cartItemsCount && isReady"
           class="count"
           >{{ cartItemsCount }}</span
         >
-      </v-link>
-    </v-container>
+      </VLink>
+    </VContainer>
   </div>
 </template>
 
@@ -32,6 +36,7 @@
 const cartItemsCount = ref(1)
 
 const isReady = ref(false)
+
 onMounted(() => {
   isReady.value = true
 })

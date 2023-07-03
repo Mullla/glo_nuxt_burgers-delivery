@@ -5,6 +5,7 @@
         <h2 v-if="title" class="section__title" v-html="title" />
         <p v-if="description" class="section__description" v-html="description" />
       </div>
+
       <div class="seciton-content">
         <slot />
       </div>
@@ -13,31 +14,22 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
-  description: {
-    type: String,
-    default: ''
-  },
-  url: {
-    type: String,
-    default: ''
-  },
-  isFooter: {
-    type: Boolean,
-    default: false
-  },
-  isFull: {
-    type: Boolean,
-    default: false
-  },
-  isTitleLarge: {
-    type: Boolean,
-    default: true
-  }
+interface Props {
+  title?: string
+  description?: string
+  url?: string
+  isFooter?: boolean
+  isFull?: boolean
+  isTitleLarge?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  title: '',
+  description: '',
+  url: '',
+  isFooter: false,
+  isFull: false,
+  isTitleLarge: true
 })
 </script>
 

@@ -8,45 +8,38 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import Swiper from 'swiper'
+import Swiper, { SwiperOptions } from 'swiper'
 
-const props = defineProps({
-  needSlider: {
-    type: Boolean,
-    default: false
-  },
+interface Props {
+  needSlider?: boolean
+  activeIndex?: number
+  sliderSettings?: SwiperOptions
+}
 
-  activeIndex: {
-    type: Number,
-    default: 0
-  },
-
-  sliderSettings: {
-    type: Object,
-    default: () => ({
-      sliderPerView: 'auto',
-      loop: false
-    })
-  }
+const props = withDefaults(defineProps<Props>(), {
+  needSlider: false,
+  activeIndex: 0,
+  sliderSettings: () => ({
+    slidesPerView: 'auto',
+    loop: false
+  })
 })
 
-const emit = defineEmits(['slide-change'])
+const emit = defineEmits(['slideChange'])
 
-const slider = ref({})
-const swiper = ref(null)
+const slider = ref<HTMLElement>()
+const swiper = ref<Swiper>()
 
 onMounted(() => {
   if (props.needSlider) {
-    swiper.value = new Swiper(slider.value, props.sliderSettings)
-    swiper.value.on('slideChange', () => {
-      emit('slide-change', swiper.value.realIndex)
-    })
+    swiper.value = new Swiper(slider.value as HTMLElement, props.sliderSettings)
+    swiper.value.on('slideChange', () => swiper.value && emit('slideChange', swiper.value.realIndex))
   }
 })
 
 const activeIndex = computed(() => props.activeIndex)
 
-watch(activeIndex, (value) => swiper.value.slideTo(value))
+watch(activeIndex, (value) => swiper.value && swiper.value.slideTo(value))
 </script>
 
 <style lang="scss" scoped>

@@ -14,9 +14,10 @@
             <div class="image-skeleton"></div>
           </div>
         </template>
+
         <template v-else>
-          <div v-for="banner in banners" :key="banner.id" :class="{ 'swiper-slide': needSlider }">
-            <BlockBannerCarouselItem v-bind="banner" />
+          <div v-for="banner in banners" :key="banner.id!" :class="{ 'swiper-slide': needSlider }">
+            <BlockBannerCarouselItem :image="banner.image!" :url="banner.url" />
           </div>
         </template>
       </div>
@@ -37,35 +38,29 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { SwiperOptions } from 'swiper'
 import BlockBannerCarouselItem from '@/components/BannerCarousel/BlockBannerCarouselItem.vue'
+import { BannerExtended } from '@/types/BannerInterface.ts'
 
-defineProps({
-  sliderSettings: {
-    type: Object,
-    default: () => ({
-      sliderPerView: 'auto',
-      loop: false,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false
-      }
-    })
-  },
+interface Props {
+  sliderSettings?: SwiperOptions
+  banners?: BannerExtended[]
+  loading?: boolean
+  needSlider?: boolean
+}
 
-  banners: {
-    type: Array,
-    default: () => []
-  },
-
-  loading: {
-    type: Boolean,
-    default: false
-  },
-
-  needSlider: {
-    type: Boolean,
-    default: true
-  }
+withDefaults(defineProps<Props>(), {
+  sliderSettings: () => ({
+    slidesPerView: 'auto',
+    loop: false,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false
+    }
+  }),
+  banners: () => [],
+  loading: false,
+  needSlider: true
 })
 
 const activeIndex = ref(0)

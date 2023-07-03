@@ -1,13 +1,16 @@
 <template>
   <div class="product-card-item">
     <div class="image" />
+
     <div class="info">
       <div class="info-header">
         <p class="title" />
         <span class="weight" />
       </div>
+
       <div class="description" />
       <div class="description" />
+
       <div class="info-bottom">
         <span class="price" />
         <div class="button" />

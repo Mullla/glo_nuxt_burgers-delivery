@@ -1,9 +1,10 @@
 <template>
   <div class="product-card-item">
     <span v-if="count" class="count" v-text="count" />
+
     <RouterLink :to="url" class="image-wrapper">
       <div class="image-skeleton" />
-      <img v-lazy-load :src="image.src" :alt="image.alt" />
+      <img v-lazy-load :src="image.src" :alt="image.alt" class="image isImageLoading" />
     </RouterLink>
 
     <div class="info">
@@ -11,18 +12,20 @@
         <p class="title" v-text="title" />
         <span class="weight">Вес: {{ weight }}</span>
       </div>
+
       <p class="description" v-text="description" />
+
       <div class="info-bottom" :class="{ 'info-bottom--counted': Boolean(count) }">
         <button v-if="count" type="button" class="button" @click="count--">
           <VIcon name="minus" class="minus" />
         </button>
 
-        <span class="price"> {{ count ? price * count : price }} Р</span>
+        <span class="price"> {{ count ? price * count : price }} ₽</span>
         <button v-if="count" type="button" class="button" @click="count++">
           <VIcon name="plus" class="plus" />
         </button>
 
-        <button v-else type="button" class="button">
+        <button v-else type="button" class="button" @click="count++">
           <VIcon name="cart" />
         </button>
       </div>
@@ -33,38 +36,30 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const props = defineProps({
-  id: {
-    type: Number,
-    default: -1
-  },
-  title: {
-    type: String,
-    default: ''
-  },
-  weight: {
-    type: Number,
-    default: 0
-  },
-  price: {
-    type: Number,
-    default: 0
-  },
-  description: {
-    type: String,
-    default: ''
-  },
-  url: {
-    type: String,
-    default: ''
-  },
+interface Props {
+  id: number
+  title: string
+  weight: number
+  price: number
+  description: string
+  url: string
   image: {
-    type: Object,
-    default: () => ({
-      src: '',
-      alt: ''
-    })
+    src: string
+    alt: string
   }
+}
+
+withDefaults(defineProps<Props>(), {
+  id: -1,
+  title: '',
+  weight: 0,
+  price: 0,
+  description: '',
+  url: '',
+  image: () => ({
+    src: '',
+    alt: ''
+  })
 })
 
 const count = ref(0)

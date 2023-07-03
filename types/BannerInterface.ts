@@ -8,3 +8,8 @@ export interface IBanner {
     | string
     | null
 }
+
+export interface BannerExtended extends IBanner {
+  url: string
+  area: string
+}

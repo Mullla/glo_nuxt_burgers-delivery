@@ -2,12 +2,15 @@
   <a v-if="!isVueLink" :href="url" :target="target">
     <slot><span v-html="text" /></slot>
   </a>
-  <nuxt-link v-else :to="mappedUrl" :append="append" :target="target">
+
+  <NuxtLink v-else :to="mappedUrl" :append="append" :target="target">
     <slot><span :data-id="mappedUrl" v-html="text" /></slot>
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const props = defineProps({
   url: {
     type: String,

@@ -7,6 +7,7 @@
 <script>
 export default {
   name: 'Row',
+
   props: {
     tag: {
       type: String,
@@ -46,6 +47,7 @@ export default {
       default: false
     }
   },
+
   computed: {
     rowModifer() {
       let aligment = ''

@@ -3,9 +3,11 @@
     <header class="page-header">
       <slot name="page-header" />
     </header>
+
     <main class="page-wrapper">
       <slot name="page-content" />
     </main>
+
     <footer class="page-footer">
       <slot name="page-footer" />
     </footer>

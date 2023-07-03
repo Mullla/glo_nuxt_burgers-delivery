@@ -4,12 +4,13 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  isFull: {
-    type: Boolean,
-    default: false
-  }
+<script setup lang="ts">
+interface Props {
+  isFull?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  isFull: false
 })
 </script>
 

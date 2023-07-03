@@ -1,11 +1,11 @@
 <template>
-  <v-section class="section-products" v-bind="sectionSettings">
-    <block-product-list
+  <VSection class="section-products" v-bind="sectionSettings">
+    <BlockProductList
       :list="productAdapter.getProducts(products)"
       :need-slider="dataSettings.needSlider"
-      :loading="true"
+      :loading="pending"
     />
-  </v-section>
+  </VSection>
 </template>
 
 <script setup>

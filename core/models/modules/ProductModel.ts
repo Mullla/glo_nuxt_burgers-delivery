@@ -47,5 +47,5 @@ export default (context: nuxtContext) => {
     }
   }
 
-  context.$models.banner = ProductModel
+  context.$models.product = ProductModel
 }

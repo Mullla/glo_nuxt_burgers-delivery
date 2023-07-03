@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <v-container>
+    <VContainer>
       <div class="footer-wrapper">
         <div class="footer-info">
           <p class="footer__logotype">LOGOS</p>
@@ -13,6 +13,7 @@
             <li class="footer-info-links__link"><a href="/">Политика конфиденциальности</a></li>
           </ul>
         </div>
+
         <nav class="footer-navigation">
           <ul class="footer-navigation-list">
             <li class="footer-navigation-list__item"><a href="/">О ресторане</a></li>
@@ -22,7 +23,7 @@
           </ul>
         </nav>
       </div>
-    </v-container>
+    </VContainer>
   </div>
 </template>
 

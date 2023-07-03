@@ -1,6 +1,6 @@
 <template>
   <VSection is-full class="section-banner-carousel">
-    <BlockBannerCarouselList :banners="banners" :loading="pending" />
+    <BlockBannerCarouselList :banners="banners" :loading="pending" :need-slider="dataSettings.needSlider" />
   </VSection>
 </template>
 
@@ -8,12 +8,15 @@
 import { ref, onBeforeMount } from 'vue'
 import BlockBannerCarouselList from '@/components/BannerCarousel/BlockBannerCarouselList.vue'
 
+defineProps({
+  dataSettings: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
 const root = useNuxtApp()
 const { banner: bannerService } = root.$services
-
-// const { data: banners, pending } = useAsyncData(() => {
-//   return bannerService.getBanners()
-// })
 
 const banners = ref([])
 const pending = ref(true)

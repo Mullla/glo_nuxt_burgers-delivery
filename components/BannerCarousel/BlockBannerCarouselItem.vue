@@ -6,20 +6,20 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  url: {
-    type: String,
-    default: ''
-  },
-
+interface Props {
   image: {
-    type: Object,
-    required: true,
-    default: () => ({
-      src: '',
-      alt: ''
-    })
+    src: string
+    alt: string
   }
+  url?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  url: '',
+  image: () => ({
+    src: '',
+    alt: ''
+  })
 })
 </script>
 

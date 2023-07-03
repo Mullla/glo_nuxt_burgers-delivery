@@ -60,6 +60,7 @@ export default defineComponent({
       }
     }
   },
+
   setup(props: ColProps) {
     const colModifer: ComputedRef<string> = computed((): string => {
       let aligment = ''

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-icon class="icon-wrapper" data-testid="base-icon" :name="name" :filled="true" />
+  <NuxtIcon class="icon-wrapper" data-testid="base-icon" :name="name" :filled="true" />
 </template>
 
 <script lang="ts" setup>
