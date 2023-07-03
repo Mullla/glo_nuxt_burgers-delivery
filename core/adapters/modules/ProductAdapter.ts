@@ -24,5 +24,5 @@ export default (context: nuxtContext) => {
     }
   }
 
-  context.$adapters.banner = new ProductAdapter()
+  context.$adapters.product = new ProductAdapter()
 }

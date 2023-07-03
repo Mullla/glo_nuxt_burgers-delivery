@@ -2,7 +2,7 @@ import { nuxtContext } from '@nuxt/types'
 
 export default ({ $config }: nuxtContext) => {
   class FetchService {
-    async request(config = {}, body = {}) {
+    async request({ config = {}, body = {} }) {
       try {
         const { url, options } = { ...FetchService.prepareRequest({ config, body }) }
         const fetchResult = await $fetch(url, options)

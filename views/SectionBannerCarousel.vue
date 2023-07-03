@@ -14,7 +14,6 @@ const { banner: bannerService } = root.$services
 // const { data: banners, pending } = useAsyncData(() => {
 //   return bannerService.getBanners()
 // })
-console.log(root)
 
 const banners = ref([])
 const pending = ref(true)

@@ -1,6 +1,6 @@
 <template>
   <SectionBannerCarousel />
-  <!-- <SectionProducts /> -->
+  <SectionProducts />
 </template>
 
 <script setup>
