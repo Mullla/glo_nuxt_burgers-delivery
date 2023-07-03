@@ -1,0 +1,23 @@
+// REGULAR/LIGHT | DEFAULT/ITALIC
+@include font-face('Gilroy Thin', '../../fonts/Gilroy/Gilroy-Thin', '100');
+@include font-face('Gilroy Extralight', '../../fonts/Gilroy/Gilroy-ExtraLight', '200');
+@include font-face('Gilroy Light', '../../fonts/Gilroy/Gilroy-Light', '300');
+@include font-face('Gilroy', '../../fonts/Gilroy/Gilroy-Regular');
+@include font-face('Gilroy Medium', '../../fonts/Gilroy/Gilroy-Medium', '500');
+
+@include font-face('Gilroy Thin Italic', '../../fonts/Gilroy/Gilroy-ThinItalic', '100', 'italic');
+@include font-face('Gilroy Extralight Italic', '../../fonts/Gilroy/Gilroy-ExtraLightItalic', '200', 'italic');
+@include font-face('Gilroy Light Italic', '../../fonts/Gilroy/Gilroy-LightItalic', '300', 'italic');
+@include font-face('Gilroy Italic', '../../fonts/Gilroy/Gilroy-Italic', '400', 'italic');
+@include font-face('Gilroy Medium Italic', '../../fonts/Gilroy/Gilroy-MediumItalic', '500', 'italic');
+
+// Bold | DEFAULT/ITALIC
+@include font-face('Gilroy Semibold', '../../fonts/Gilroy/Gilroy-SemiBold', '600');
+@include font-face('Gilroy Bold', '../../fonts/Gilroy/Gilroy-Bold', '700');
+@include font-face('Gilroy ExtraBold', '../../fonts/Gilroy/Gilroy-ExtraBold', '800');
+@include font-face('Gilroy Black', '../../fonts/Gilroy/Gilroy-Black', '900');
+
+@include font-face('Gilroy Semibold Italic', '../../fonts/Gilroy/Gilroy-SemiBoldItalic', '600', 'italic');
+@include font-face('Gilroy Bold Italic', '../../fonts/Gilroy/Gilroy-BoldItalic', '700', 'italic');
+@include font-face('Gilroy ExtraBold Italic', '../../fonts/Gilroy/Gilroy-ExtraBoldItalic', '800', 'italic');
+@include font-face('Gilroy Black Italic', '../../fonts/Gilroy/Gilroy-BlackItalic', '900', 'italic');

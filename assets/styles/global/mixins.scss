@@ -1,0 +1,70 @@
+@mixin font-face($font-name, $file-path, $weight: 'normal', $style: 'normal') {
+  $url: 'url("' + $file-path + '.woff2") format("woff2"), ';
+  $url: $url + 'url("' + $file-path + '.woff") format("woff")';
+
+  @font-face {
+    font-display: auto;
+    font-family: $font-name;
+    font-style: unquote($style);
+    font-weight: unquote($weight);
+    src: unquote($url);
+  }
+}
+
+@mixin font($font-size, $line-height: 'normal', $font-weight: 500, $font-name: $STYRENE, $letter-spacing: 0) {
+  font-family: $font-name;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-tablet {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+$max-width: 144;
+@mixin adaptive-font($pc-size, $mob-size) {
+  $add-size: $pc-size - $mob-size;
+  $add-mob-size: $add-size + $add-size * 0.7;
+
+  @media (min-width: 76.7rem) {
+    font-size: calc(#{$mob-size + rem} + #{$add-size} * (100vw / #{$max-width}));
+  }
+
+  @media (max-width: 76.7rem) {
+    font-size: calc(#{$mob-size + rem} + #{$add-mob-size} * ((100vw - 37.5rem) / #{$max-width}));
+  }
+}

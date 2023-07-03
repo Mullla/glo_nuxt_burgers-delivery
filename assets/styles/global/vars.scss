@@ -1,0 +1,54 @@
+/* Толщины шрифтов */
+$FW_THIN: 100;
+$FW_EXTRA_LIGHT: 200;
+$FW_LIGHT: 300;
+$FW_NORMAL: 400;
+$FW_MEDIUM: 500;
+$FW_SEMI_BOLD: 600;
+$FW_BOLD: 700;
+$FW_EXTRA_BOLD: 800;
+$FW_HEAVY: 900;
+
+/* Стиль шрифта */
+$FW_ITALIC: italic;
+
+/* Настройки колоночной системы на десктопах */
+$COL_COUNT_DESKTOP: 12;
+$COL_GAP_DESKTOP: 2rem;
+$COL_GAP_DESKTOP_LARGE: 5rem;
+$CONTAINER_WIDTH_DESKTOP: 130rem;
+$SECTION_SIDE_OFFSET_DESKTOP: 4rem;
+$COL_WIDTH_DESKTOP: calc(($CONTAINER_WIDTH_DESKTOP - ($COL_COUNT_DESKTOP - 1) * $COL_GAP_DESKTOP) / $COL_COUNT_DESKTOP);
+
+/* Настройки колоночной системы на планшетах */
+$COL_COUNT_TABLET: 8;
+$COL_GAP_TABLET: 2rem;
+$CONTAINER_WIDTH_TABLET: auto;
+$SECTION_SIDE_OFFSET_TABLET: 2rem;
+
+/* Настройки колоночной системы на мобильных */
+$COL_COUNT_MOBILE: 2;
+$COL_GAP_MOBILE: 2rem;
+$CONTAINER_WIDTH_MOBILE: auto;
+$SECTION_SIDE_OFFSET_MOBILE: 2rem;
+
+$VERTICAL_OFFSET_MOBILE: 2.5rem;
+$VERTICAL_OFFSET_DESKTOP: 5rem;
+
+/* Уровни слоёв */
+$zLayerHide: -1; /* скрытый блок */
+$zLayerBack: 0; /* Видео и бекграунд */
+$zLayerContent: 3; /* Контент */
+$zLayerDecor1: 5; /* Декор разный */
+$zLayerDecor2: 6; /* Про запас */
+$zLayerSubNav: 7; /* Про запас */
+$zLayerSubInfo: 8; /* Про запас */
+$zLayerNav: 9; /* Навигация/ссылки */
+$zLayerOverlay: 10; /* Попапы и тп */
+$zLayerTop: 15; /* Открытое меню (топовый/верхний слой) */
+$zLayerHeaderPopup: 20; /* попап в хэдере */
+$zLayerPopups: 50; /* Попапы и тп */
+$zLayerTop: 100; /* Открытое меню (топовый/верхний слой) */
+
+/* Семейства шрифтов */
+$FONT_DEFAULT: 'Gilroy', arial, sans-serif;

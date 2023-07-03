@@ -1,0 +1,4 @@
+**/normalize.scss
+stylelint.config.js
+.vscode
+.stylelintcache
